@@ -1,26 +1,25 @@
-import React, { useEffect, useState } from "react";
-import styles from "./AccData.module.css";
+"use client"
+import React, { useEffect, useState } from "react"
+import styles from "./AccData.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faClose
-} from "@fortawesome/free-solid-svg-icons"
+import { faClose } from "@fortawesome/free-solid-svg-icons"
 
 const AccData = (props) => {
-  const [accname, setAccname] = useState("");
-  const [accpwd, setAccpwd] = useState("");
-  const [acccpwd, setAcccpwd] = useState("");
-  const [accemail, setAccemail] = useState("");
-  const [accphone, setAccPhone] = useState("");
-  const [accpic, setAccpic] = useState("");
-  const [obj, setObj] = useState({});
-  const [update, isUpdate] = useState(false);
+  const [accname, setAccname] = useState("")
+  const [accpwd, setAccpwd] = useState("")
+  const [acccpwd, setAcccpwd] = useState("")
+  const [accemail, setAccemail] = useState("")
+  const [accphone, setAccPhone] = useState("")
+  const [accpic, setAccpic] = useState("")
+  const [obj, setObj] = useState({})
+  const [update, isUpdate] = useState(false)
 
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(false)
 
-  let activeUser = props;
+  let activeUser = props
 
-  let localData = JSON.parse(localStorage.getItem("accountsPage"));
-  let selectedDatatoShow = localData[`${props.activeUser}`];
+  let localData = JSON.parse(localStorage.getItem("accountsPage"))
+  let selectedDatatoShow = localData[`${props.activeUser}`]
   const updateProfileHandler = () => {
     setObj({
       email:
@@ -32,13 +31,13 @@ const AccData = (props) => {
         accphone === "" ? localData[`${props.activeUser}`].phone : accphone,
       profilePic:
         accpic === "" ? localData[`${props.activeUser}`].profilePic : accpic,
-    });
-    isUpdate(true);
-    setModal(true);
-  };
+    })
+    isUpdate(true)
+    setModal(true)
+  }
 
   const deletephotoHandler = () => {
-    console.log("delete clicked");
+    console.log("delete clicked")
 
     setObj({
       email: localData[`${props.activeUser}`].email,
@@ -46,32 +45,32 @@ const AccData = (props) => {
       password: localData[`${props.activeUser}`].password,
       phone: localData[`${props.activeUser}`].phone,
       profilePic: "",
-    });
-    console.log(obj);
-  };
+    })
+    console.log(obj)
+  }
 
   useEffect(() => {
     if (update) {
-      console.log(obj);
-      let obj1 = JSON.parse(localStorage.getItem("accountsPage"));
-      console.log("before addding product:", obj1);
-      console.log();
+      console.log(obj)
+      let obj1 = JSON.parse(localStorage.getItem("accountsPage"))
+      console.log("before addding product:", obj1)
+      console.log()
       obj1 = {
         ...obj1,
         [`${JSON.stringify(activeUser).slice(
           15,
           JSON.stringify(activeUser).length - 2
         )}`]: obj,
-      };
-      console.log(obj1);
-      localStorage.setItem("accountsPage", JSON.stringify(obj1));
+      }
+      console.log(obj1)
+      localStorage.setItem("accountsPage", JSON.stringify(obj1))
     }
-    setAccname("");
-    setAccpwd("");
-    setAccemail("");
-    setAccPhone("");
-    setAccpic("");
-  }, [obj, update]);
+    setAccname("")
+    setAccpwd("")
+    setAccemail("")
+    setAccPhone("")
+    setAccpic("")
+  }, [obj, update])
 
   return (
     <>
@@ -191,6 +190,6 @@ const AccData = (props) => {
       )}
     </>
   )
-};
+}
 
-export default AccData;
+export default AccData

@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from "react";
-import styles from "./NotificationList.module.css";
+"use client"
+import React, { useEffect, useState } from "react"
+import styles from "./NotificationList.module.css"
 
 const NotificationList = () => {
-  let [notifications, setNotifications] = useState({});
+  let [notifications, setNotifications] = useState({})
 
   useEffect(() => {
     setNotifications(
       JSON.parse(localStorage.getItem("dashboardPage"))["notifications"]
-    );
-  }, []);
+    )
+  }, [])
 
   let notificationsarr = Object.keys(notifications).map(
     (key, index) => notifications[key]
-  );
+  )
 
   return (
     <div className={styles.container}>
@@ -28,7 +29,7 @@ const NotificationList = () => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default NotificationList;
+export default NotificationList

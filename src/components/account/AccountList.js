@@ -1,14 +1,9 @@
-import React from "react";
-import styles from "./AccountList.module.css";
+"use client"
+import React from "react"
+import styles from "./AccountList.module.css"
 
 const AccoundList = (props) => {
-  const data = Object.keys(props.accdata);
-
-  // const selectHandler = (e) => {
-  //   setSelecteduser(e.target.value);
-  //   console.log(selecteduser);
-  //   props.selectedUser(selecteduser);
-  // };
+  const data = Object.keys(props.accdata)
 
   return (
     <div className={styles.accountlistcontainer}>
@@ -16,7 +11,7 @@ const AccoundList = (props) => {
       <label>Accounts</label>
       <br />
       <select onChange={(e) => props.data(e.target.value)}>
-        <option value="select account">Select Account</option>
+        <option value='select account'>Select Account</option>
         {data.map((item) => (
           <option value={item} key={item}>
             {item}
@@ -24,7 +19,7 @@ const AccoundList = (props) => {
         ))}
       </select>
     </div>
-  );
-};
+  )
+}
 
-export default AccoundList;
+export default AccoundList

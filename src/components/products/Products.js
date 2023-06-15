@@ -1,7 +1,8 @@
-import React from "react";
-import ProductCategoriesList from "./ProductCategoriesList";
-import ProductsList from "./ProductsList";
-import styles from "./Products.module.css";
+"use client"
+import React from "react"
+import ProductCategoriesList from "./ProductCategoriesList"
+import ProductsList from "./ProductsList"
+import styles from "./Products.module.css"
 
 const Products = () => {
   return (
@@ -9,7 +10,7 @@ const Products = () => {
       <ProductsList />
       <ProductCategoriesList />
     </div>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products

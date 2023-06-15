@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from "react";
-import styles from "./OrdersList.module.css";
+"use client"
+import React, { useEffect, useState } from "react"
+import styles from "./OrdersList.module.css"
 
 const OrdersList = () => {
-  const [dashboardorders, setDashboardOrders] = useState({});
+  const [dashboardorders, setDashboardOrders] = useState({})
 
   useEffect(() => {
     setDashboardOrders(
       JSON.parse(localStorage.getItem("dashboardPage"))["orders"]
-    );
-  }, []);
+    )
+  }, [])
 
   let orders = Object.keys(dashboardorders).map(
     (key, index) => dashboardorders[key]
-  );
+  )
 
   return (
     <div className={styles.container}>
@@ -62,7 +63,7 @@ const OrdersList = () => {
         </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
 
-export default OrdersList;
+export default OrdersList

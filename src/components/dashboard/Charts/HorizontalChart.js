@@ -1,9 +1,9 @@
-import React, { Component, useState } from "react";
-import Chart from "react-apexcharts";
-import styles from "./ChartStyles.module.css";
+"use client"
+import React, { Component, useState } from "react"
+import Chart from "react-apexcharts"
+import styles from "./ChartStyles.module.css"
 
 const HorizontalChart = () => {
-
   const [data, setData] = useState({
     backgroundColor: [
       "aqua",
@@ -13,11 +13,10 @@ const HorizontalChart = () => {
       "purple",
       "red",
       "yellow",
-    ]
+    ],
   })
 
   const [options, setOptions] = useState({
-    
     plotOptions: {
       bar: {
         borderRadius: 4,
@@ -56,16 +55,9 @@ const HorizontalChart = () => {
   return (
     <div className={styles.chartcontainer}>
       <h2>Performance</h2>
-      <Chart
-        data={data}
-        options={options}
-        series={series}
-        type='bar'
-      />
+      <Chart data={data} options={options} series={series} type='bar' />
     </div>
   )
 }
 
-
-
-export default HorizontalChart;
+export default HorizontalChart

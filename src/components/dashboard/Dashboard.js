@@ -1,15 +1,16 @@
-import React, { useState } from "react";
-import OrdersList from "./OrdersList";
-import NotificationList from "./NotificationList";
-import styles from "./Dashboard.module.css";
-import PieChart from "./Charts/PieChart";
-import LineChart from "./Charts/LineChart";
-import HorizontalChart from "./Charts/HorizontalChart";
+"use client"
+import React, { useState } from "react"
+import OrdersList from "./OrdersList"
+import NotificationList from "./NotificationList"
+import styles from "./Dashboard.module.css"
+import PieChart from "./Charts/PieChart"
+import LineChart from "./Charts/LineChart"
+import HorizontalChart from "./Charts/HorizontalChart"
 
 const Dashboard = () => {
   let localPerformance = JSON.parse(localStorage.getItem("dashboardPage"))[
     "storage"
-  ];
+  ]
   const [userData, setUserData] = useState({
     labels: [
       `Used(${localPerformance.used}GB)`,
@@ -52,7 +53,7 @@ const Dashboard = () => {
       </div>
       <OrdersList />
     </div>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

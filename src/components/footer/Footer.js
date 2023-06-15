@@ -1,14 +1,16 @@
-import React from "react";
-import styles from "./Footer.module.css";
+"use client"
+import React from "react"
+import styles from "./Footer.module.css"
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <p>
-        Copyright &copy; <b>2023</b> All rights reserved. Designed By Manas Kumar Panigrahi
+        Copyright &copy; <b>2023</b> All rights reserved. Designed By Manas
+        Kumar Panigrahi
       </p>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

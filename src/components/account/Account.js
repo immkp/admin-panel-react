@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react";
-import AccData from "./AccData";
-import AccoundList from "./AccountList";
+"use client"
+import React, { useEffect, useState } from "react"
+import AccData from "./AccData"
+import AccoundList from "./AccountList"
 
 const Account = () => {
-  const [accdata, setAccdata] = useState({});
-  const [user, setUser] = useState("");
+  const [accdata, setAccdata] = useState({})
+  const [user, setUser] = useState("")
   useEffect(() => {
-    setAccdata(JSON.parse(localStorage.getItem("accountsPage")));
-  }, []);
+    setAccdata(JSON.parse(localStorage.getItem("accountsPage")))
+  }, [])
 
   const selectedUser = (data) => {
-    setUser(data);
-  };
+    setUser(data)
+  }
 
   return (
     <div>
@@ -20,7 +21,7 @@ const Account = () => {
       <br />
       <AccData activeUser={user} />
     </div>
-  );
-};
+  )
+}
 
-export default Account;
+export default Account
